@@ -1,0 +1,4 @@
+Contact: mailto:mail@joaqu1m.com
+Expires: 2027-11-23T19:16:10Z
+Preferred-Languages: en, pt
+Canonical: https://spikedex.com/.well-known/security.txt

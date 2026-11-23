@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="pt-BR"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Visualizador 3D</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;800&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#26405c;--blue:#2f9ee8;--blue2:#1c78c0;--yel:#ffcf3f}
+*{box-sizing:border-box}html,body{margin:0;height:100%;background:transparent;font:800 14px Nunito,sans-serif;color:var(--ink);overflow:hidden}
+canvas{opacity:0;transition:opacity .4s;position:absolute;inset:0;width:100%;height:100%;display:block;outline:none;background:transparent;touch-action:none;cursor:grab}
+canvas:active{cursor:grabbing}
+body.ready canvas{opacity:1}
+#load{position:absolute;left:0;right:0;bottom:28px;display:grid;justify-items:center;gap:8px;text-align:center;transition:opacity .35s;z-index:3}
+html.emb #load{display:none}
+#load.hide{opacity:0;pointer-events:none}
+.track{width:200px;height:14px;border-radius:99px;background:#fff;box-shadow:inset 0 2px 5px #5aa7dd55,0 0 0 3px #bfe3fb;overflow:hidden}
+#fill{height:100%;width:8%;border-radius:99px;background:linear-gradient(var(--blue),var(--blue2));transition:width 7s cubic-bezier(.1,.7,.2,1)}
+.ctl{opacity:0;pointer-events:none;transition:opacity .4s;position:absolute;left:0;right:0;bottom:12px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:0 10px;z-index:2}
+.pill{border:0;font:800 14px Nunito,sans-serif;padding:7px 16px;border-radius:99px;background:#fff;color:var(--ink);box-shadow:0 3px 0 #b7d3e8;cursor:pointer;transition:background-color .2s,color .2s,transform .15s}
+.pill:hover:not(.on){background:#eaf5ff;color:var(--blue2);transform:translateY(-2px)}
+.pill.on{background:var(--yel);box-shadow:0 3px 0 #c99a10}
+.ctl.busy .pill{opacity:.5;pointer-events:none}
+.ctl.ready{opacity:1;pointer-events:auto}
+#hint{position:absolute;top:10px;left:0;right:0;text-align:center;font-size:12px;opacity:.55;pointer-events:none}
+@media (prefers-reduced-motion:reduce){#fill{transition:none}}
+</style></head><body>
+<script>if(window.top!==window)document.documentElement.className="emb"</script>
+<canvas id="canvas" tabindex="0"></canvas>
+<div id="hint">arraste para girar · role para dar zoom</div>
+<div class="ctl" id="ctl"></div>
+<div id="load"><div id="msg">Carregando o 3D…</div><div class="track"><div id="fill"></div></div></div>
+<script>requestAnimationFrame(function(){requestAnimationFrame(function(){var f=document.getElementById("fill");if(f)f.style.width="92%"})})</script>
+<script type="module" src="viewer.js"></script>
+</body></html>

@@ -1,0 +1,26 @@
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+
+/css/*
+  Cache-Control: public, max-age=31536000, immutable
+/js/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+/assets/*
+  Cache-Control: public, max-age=604800
+/skins/*
+  Cache-Control: public, max-age=604800
+/data/*
+  Cache-Control: public, max-age=300
+  X-Robots-Tag: noindex
+/godot/*
+  X-Robots-Tag: noindex
+/viewer/*
+  X-Robots-Tag: noindex
+
+# o endereço *.pages.dev nunca deve competir no Google com o domínio próprio
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex

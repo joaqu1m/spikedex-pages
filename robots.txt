@@ -1,0 +1,8 @@
+User-agent: *
+Disallow: /*?
+Disallow: /godot/
+Disallow: /viewer/
+Disallow: /data/
+Disallow: /api/
+
+Sitemap: https://spikedex.com/sitemap.xml
